@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('partials/head') %>
+
+  <body>
+    <header>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">fullChango</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container my-4">
+      <form action="" id="procesar-pago" method="POST">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="buyer-name"
+            placeholder="Cliente"
+            name="cliente"
+          />
+          <label for="buyer-name">Cliente</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="buyer-email"
+            placeholder="name@example.com"
+            name="email"
+          />
+          <label for="buyer-email">Email</label>
+        </div>
+        <div class="table-responsive" id="miCarrito">
+          <table class="table" id="lista-carrito">
+            <thead>
+              <tr>
+                <th scope="col">Imagen</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- los registros serán llenados por JS -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="4" scope="col" class="text-end">TOTAL:</th>
+                <th scope="col">
+                  <h5 id="total"></h5>
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success mx-2" id="buy-back">
+            Seguir comprando
+          </button>
+          <button type="submit" class="btn btn-primary mx-2" id="buy-end">
+            Finalizar compra
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- scripts de bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+
+  </body>
+</html>
